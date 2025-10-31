@@ -1,10 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>My Hugo Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학교 부스 예약 시스템</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Hello, Hugo is working!</h1>
+    <div class="mobile-container">
+        <header class="mobile-header">
+            <div class="header-tabs">
+                <span class="active">전체 부스</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="main-banner">
+                <div class="banner-content">
+                    <span class="tag">공지사항</span>
+                    <h2>2025 솔빛제</h2>
+                    <p class="date">2025.12.24</p>
+                    <a href="#" class="banner-reserve-btn">자세히 보기</a>
+                </div>
+            </section>
+
+            <!--<section class="category-menu">
+                <a href="#" class="category-item">
+                    <div class="icon-circle">💻</div>
+                    <span>코딩</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="icon-circle">🧪</div>
+                    <span>과학</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="icon-circle">🎨</div>
+                    <span>미술</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="icon-circle">🎤</div>
+                    <span>공연</span>
+                </a>
+            </section> -->
+
+            <section class="booth-list-section">
+                <h3>🔔 지금 예약 가능한 부스</h3>
+                
+                <div class="booth-card">
+                    <div class="booth-info">
+                        <h4>크리스마스 방탈출 (CR1)</h4>
+                        <p class="time">운영 시간: 10:00 - 12:50</p>
+                    </div>
+                    <a href="/function/reserve.html" class="booth-reserve-btn">예약</a>
+                </div>
+
+                <div class="booth-card">
+                    <div class="booth-info">
+                        <h4>과학 실험 부스 (B-205)</h4>
+                        <p class="time">운영 시간: 11:00 - 17:00</p>
+                    </div>
+                    <a href="#" class="booth-reserve-btn">예약</a>
+                </div>
+
+                <div class="booth-card">
+                    <div class="booth-info">
+                        <h4>사진 & 포토존 부스 (C-303)</h4>
+                        <p class="time">운영 시간: 10:30 - 15:30</p>
+                    </div>
+                    <a href="#" class="booth-reserve-btn">예약</a>
+                </div>
+                
+                <div style="height: 100px;"></div>
+            </section>
+        </main>
+        
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <span class="icon">🏠</span>
+                <span class="label">홈</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">🔍</span>
+                <span class="label">검색</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">🎟️</span>
+                <span class="label">티켓</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">👤</span>
+                <span class="label">마이</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="/script/script.js"></script>
 </body>
 </html>
