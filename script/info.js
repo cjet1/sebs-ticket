@@ -132,7 +132,7 @@ const checkFormValidity = () => {
             emailGuide.style.color = '#ff4747';
             emailInput.closest('.form-group')?.classList.add('error'); 
         } else {
-            emailGuide.textContent = '예) user@school.ac.kr';
+            emailGuide.textContent = '예) user@cjetlab.xyz';
             emailGuide.style.color = '#03c75a';
             emailInput.closest('.form-group')?.classList.remove('error');
         }
@@ -252,7 +252,7 @@ formInputs.forEach(element => {
                         ...reservationData 
                     });
 
-                    alert(`${selectedTime} 코딩 체험 부스를 예약했습니다! (${partySize}명)\n\n🎉 예약 번호: ${reservationId} 🎉\n\n감사합니다.`);
+                    alert(`[셉스티켓] ${selectedTime} 코딩 체험 부스를 예약했습니다! (${partySize}명)\n\n🎉 예약 번호: ${reservationId} 🎉\n\n감사합니다.`);
                     console.log("✅ 예약 성공 및 정보 저장 완료. 예약 번호:", reservationId);
 
                     window.location.href = './reserve.html';
