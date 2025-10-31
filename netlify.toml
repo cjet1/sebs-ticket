@@ -1,8 +1,7 @@
 # netlify.toml 파일 내용
 
 [build]
-  command = "hugo"
-  publish = "public"
+  publish = "/"
 
 # Hugo 버전을 명시합니다.
 [build.environment]
