@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 / 회원가입</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { text-align: center; color: #1a4d8c; margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
+        input[type="email"], input[type="password"], input[type="text"] { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; background-color: #1a4d8c; color: white; padding: 12px 0; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background-color: #163d6b; }
+        .switch-link { text-align: center; margin-top: 15px; font-size: 14px; }
+        .switch-link a { color: #1a4d8c; text-decoration: none; cursor: pointer; }
+        #auth-status { text-align: center; margin-top: 20px; color: #ff5e3a; font-weight: bold; }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        
+        <div id="auth-status"></div>
+
+        <form id="login-form" onsubmit="handleLogin(); return false;">
+            <h2>로그인</h2>
+            <label for="reserve-id-input">예매번호</label>
+            <input type="text" id="reserve-id-input" required placeholder="발급받은 예매번호를 입력하세요">
+            
+            <label for="password-input">학번</label>
+            <input type="password" id="password-input" required placeholder="학번을 입력하세요 (비밀번호 역할)">
+            
+            <button type="submit">로그인</button>
+        </form>
+
+        <form id="signup-form" onsubmit="handleSignup(); return false;" style="display:none;">
+            <h2>회원가입</h2>
+            <label for="signup-email">이메일</label>
+            <input type="email" id="signup-email" required placeholder="이메일">
+            
+            <label for="signup-password">비밀번호 (학번)</label>
+            <input type="password" id="signup-password" required placeholder="학번을 비밀번호로 사용">
+            
+            <label for="signup-name">이름</label>
+            <input type="text" id="signup-name" required placeholder="이름">
+
+            <label for="signup-studentId">학번 (예: 10101)</label>
+            <input type="text" id="signup-studentId" required placeholder="학번">
+            
+            <button type="submit">회원가입</button>
+        </form>
+        
+        <div class="switch-link">
+            <p>
+                <span id="login-switch">회원이 아니신가요? <a onclick="switchForm('signup')">회원가입</a></span>
+                <span id="signup-switch" style="display:none;">계정이 있으신가요? <a onclick="switchForm('login')">로그인</a></span>
+            </p>
+        </div>
+    </div>
+    
+    <script src="/script/login.js"></script>
+</body>
+</html>

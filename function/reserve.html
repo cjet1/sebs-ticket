@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부스 예약 상세</title>
+    <link rel="stylesheet" href="/style.css"> 
+    <link rel="stylesheet" href="/function/reserve.css"> 
+</head>
+<body>
+    <div class="mobile-container reserve-page"> 
+        <header class="page-header">
+            <a href="/index.html" class="back-btn">← 뒤로</a> 
+            <h1>방탈출 부스 예약</h1>
+        </header>
+
+        <main class="main-content">
+            
+            <section class="booth-detail-info">
+                <div class="booth-image-placeholder">
+                    
+                </div>
+                <h2>크리스마스 방탈출 (CR1)</h2>
+                <p class="description">
+                    크리스마스에 빈 집을 잠입한 당신, 집 주인이 숨겨놓은 힌트와 트랩을 피해 탈출하세요!! 
+                </p>
+                <div class="meta-info">
+                    <span>📍 위치: 본관 6층 기술실 (창의탐구반 자습실 옆)</span>
+                    <span>⏳ 운영 시간: 10:00 - 12:50</span>
+                    <span>👨‍💻 최대 정원: 5명</span>
+                </div>
+            </section>
+            <section class="reservation-form">
+                <h3>🗓️ 시간 선택 (1팀 기준)</h3>
+    
+                <div class="time-slots">
+                </div>
+    
+                <div class="reservation-summary">
+                    <p>선택된 시간: <span id="selected-time">선택 안 됨</span></p>
+                    <button id="final-reserve-btn" class="final-reserve-btn" disabled>예약 확정하기</button>
+                </div>
+            </section>
+        </main>
+        
+        </div>
+
+<script type="module" src="../script/reserve.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+</body>
+</html>

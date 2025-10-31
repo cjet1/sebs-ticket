@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 정보 입력</title>
+    <link rel="stylesheet" href="/style.css"> 
+    <link rel="stylesheet" href="/function/reserve.css"> 
+</head>
+<body>
+    <div class="mobile-container reserve-page">
+        <header class="page-header">
+            <a href="#" id="back-to-terms" class="back-btn">← 뒤로</a> 
+            <h1>예약 정보 입력</h1>
+        </header>
+
+        <main class="main-content">
+            <section class="info-form-section">
+                <h4>예약자 정보 (선택 시간: <strong id="final-selected-time"></strong>)</h4>
+                
+                <div class="form-group">
+                    <label for="input-student-id">학번 (필수)</label>
+                    <input type="text" id="input-student-id" placeholder="예: 20241234">
+                </div>
+                <div class="form-group">
+                    <label for="input-name">이름 (필수)</label>
+                    <input type="text" id="input-name" placeholder="예: 홍길동">
+                </div>
+                <div class="form-group">
+                    <label for="input-phone">전화번호 (필수)</label>
+                    <input type="tel" id="input-phone" placeholder="예: 010-1234-5678">
+                </div>
+                <div class="form-group">
+                    <label for="input-party-size">인원 수</label>
+                    <input type="number" id="input-party-size" value="1" min="1" max="5">
+                    <small class="capacity-note">최대 정원 <span id="max-capacity-display">5</span>명</small>
+                </div>
+                <div class="form-group">
+                    <label for="input-email">이메일 주소 (필수/확인용)</label>
+                    <input type="email" id="input-email" placeholder="예: user@example.com">
+                    <small id="email-format-guide" class="input-guide-message">예) user@school.ac.kr</small>
+                </div>
+            </section>
+
+            <button id="final-reserve-confirm-btn" class="final-reserve-btn" disabled>예약 최종 확정하기</button>
+        </main>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+
+<script type="module" src="../script/info.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이 페이지</title>
+    <link rel="stylesheet" href="/style.css"> 
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        /* 헤더 스타일 */
+        .header { padding: 20px; background-color: #1a4d8c; color: white; }
+        .header h1 { margin: 0; font-size: 20px; }
+        .user-info-box { background-color: #333; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .user-email { font-size: 1.1em; font-weight: bold; }
+        .logout-btn { background: #ff5e3a; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+        /* 메뉴 스타일 */
+        .menu-list { list-style: none; padding: 0; margin: 0; }
+        .menu-list li { border-bottom: 1px solid #eee; padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .menu-list li:last-child { border-bottom: none; }
+        .menu-list li:hover { background-color: #f9f9f9; }
+        .menu-label { font-size: 16px; color: #333; }
+        .menu-icon { color: #aaa; }
+        /* 로그인 필요 메시지 스타일 */
+        #login-required { text-align: center; padding: 50px; color: #555; }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div id="user-profile" class="user-info-box">
+            <span id="display-email" class="user-email">로그인 정보 로딩 중...</span>
+            <button id="logout-button" class="logout-btn" style="display: none;">로그아웃</button>
+        </div>
+
+        <ul id="main-menu" class="menu-list" style="display: none;">
+            <li onclick="alert('예매/취소 내역 페이지로 이동합니다.');">
+                <span class="menu-label">예매/취소 내역</span>
+                <span class="menu-icon">></span>
+            </li>
+            <li onclick="window.open('https://instagram.com/sw__sebs/', '_blank');">
+                <span class="menu-label">방송부 인스타그램</span>
+                <span class="menu-icon">></span>
+            </li>
+            <li onclick="alert('내 계정 정보 수정 페이지로 이동합니다.');">
+                <span class="menu-label">내 계정</span>
+                <span class="menu-icon">></span>
+            </li>
+            <li onclick="alert('운영 약관 페이지로 이동합니다.');">
+                <span class="menu-label">운영 약관</span>
+                <span class="menu-icon">></span>
+            </li>
+        </ul>
+
+        <div id="login-required" style="display: none;">
+            <h3>로그인이 필요합니다.</h3>
+            <p>이 페이지를 이용하시려면 로그인해 주세요.</p>
+            <button onclick="window.location.href='login.html'" class="logout-btn">로그인 페이지로 이동</button>
+        </div>
+    </div>
+
+    <script src="/script/mypage.js"></script>
+</body>
+</html>

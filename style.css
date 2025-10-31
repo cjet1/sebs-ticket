@@ -1,0 +1,695 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Malgun Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* 🌟🌟🌟 모바일 컨테이너 설정 🌟🌟🌟 */
+/* 모바일 장치 화면처럼 보이게 하기 위해 너비를 제한 */
+.mobile-container {
+    max-width: 480px; /* 스마트폰 최대 가로 너비 */
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* 하단바 때문에 생길 수 있는 콘텐츠 가림 방지를 위해 패딩 추가 */
+    padding-bottom: 60px; 
+}
+
+/* 상단 헤더 스타일 */
+.mobile-header {
+    padding: 15px 15px 0;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+}
+
+.header-tabs {
+    display: flex;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.header-tabs span {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #999;
+}
+
+.header-tabs .active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+/* 메인 콘텐츠 영역 */
+.main-content {
+    padding-top: 10px;
+}
+
+/* 2-1. 상단 메인 부스 이미지 배너 */
+.main-banner {
+    background: url('/image/banner_image.jpg') center center / cover, #3498db; /* 실제 이미지를 대체해주세요 */
+    height: 250px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+.main-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent); /* 하단에 그라데이션 오버레이 */
+}
+
+.banner-content {
+    z-index: 10;
+}
+
+.banner-content .tag {
+    background-color: #e74c3c;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.banner-content h2 {
+    font-size: 1.8em;
+    margin: 5px 0;
+}
+
+.banner-content .date {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.banner-reserve-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+
+/* 2-2. 카테고리/부스 아이콘 메뉴 */
+.category-menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 10px;
+    justify-content: space-around;
+    border-bottom: 8px solid #f8f8f8;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%; /* 4개 아이콘이 한 줄에 들어오도록 */
+    text-decoration: none;
+    color: #333;
+    margin: 10px 0;
+}
+
+.icon-circle {
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.category-item span {
+    font-size: 0.8em;
+}
+
+/* 2-3. 일반 부스 목록 */
+.booth-list-section {
+    padding: 15px;
+}
+
+.booth-list-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.booth-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.booth-card:last-child {
+    border-bottom: none;
+}
+
+.booth-info h4 {
+    font-size: 1em;
+    margin-bottom: 3px;
+}
+
+.booth-info .time {
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
+.booth-reserve-btn {
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* 🌟🌟🌟 하단바 스타일 (Footer Navigation) 🌟🌟🌟 */
+.bottom-nav {
+    position: fixed; /* 화면 하단에 고정 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 480px; /* 모바일 컨테이너와 너비 일치 */
+    margin: 0 auto;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.7em;
+    padding: 5px 0;
+    width: 25%;
+}
+
+.nav-item .icon {
+    font-size: 1.2em;
+    margin-bottom: 2px;
+}
+
+.nav-item.active {
+    color: #000;
+}
+
+/* ============================================== */
+/* 2. TERMS PAGE (약관 동의) 스타일 */
+/* ============================================== */
+
+/* 전체 동의 섹션 컨테이너 */
+.terms-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- 개별 약관 항목 스타일링 --- */
+.terms-list {
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fcfcfc;
+}
+
+.term-item {
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-bottom: 1px dashed #e9e9e9;
+}
+.term-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.term-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* '필수' 텍스트 강조 */
+.term-required {
+    color: #007bff; /* 파란색 강조 */
+    font-weight: 700;
+    margin-right: 8px;
+}
+/* '선택' 텍스트 */
+.term-optional {
+    color: #888;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+/* '전문 보기' 버튼 스타일 */
+.view-detail {
+    background: none;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+.view-detail:hover {
+    background-color: #eee;
+}
+
+/* 실제 약관 내용 박스 (스크롤 영역) */
+.term-content {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    height: 100px; /* 고정 높이 지정 */
+    overflow-y: scroll; /* 스크롤 가능하게 설정 */
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* 개별 동의 체크박스 라벨 */
+.term-check label {
+    font-size: 15px;
+    color: #555;
+    cursor: pointer;
+}
+
+
+/* --- 전체 동의 박스 스타일링 --- */
+.all-terms-check-box {
+    border: 2px solid #007bff; /* 메인 컬러로 테두리 강조 */
+    background-color: #e6f0ff; /* 연한 배경색 */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.all-agree-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #007bff;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* 체크박스 기본 스타일 */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0; /* 기본 마진 제거 */
+}
+
+/* --- 다음 단계 버튼 (#next-step-btn) 스타일링 --- */
+#next-step-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    /* 비활성화 상태 (disabled) */
+    background-color: #cccccc; 
+    color: #888888;
+    opacity: 0.7;
+}
+
+/* 활성화 상태 (checked & enabled) */
+#next-step-btn:enabled {
+    background-color: #007bff; /* 메인 컬러 */
+    color: white;
+    opacity: 1;
+}
+
+/* 활성화 상태 호버 효과 */
+#next-step-btn:enabled:hover {
+    background-color: #0056b3;
+}
+
+/* ============================================== */
+/* 3. TERMS PAGE (약관 동의) 네이버 스타일 */
+/* ============================================== */
+
+/* 전체 페이지 컨테이너 스타일 */
+.terms-page-container {
+    padding: 0 40px; /* 좌우 여백 확보 */
+}
+
+/* --- 상단 로고 및 제목 섹션 --- */
+.terms-header-area {
+    text-align: center;
+    padding: 40px 0 30px 0;
+}
+
+/* 로고 스타일 (Placeholder N) */
+.site-logo {
+    width: 60px;
+    height: 60px;
+    background-color: #03c75a; /* 네이버 녹색 */
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 60px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%; /* 원형 로고 */
+}
+
+.terms-header-area h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    border-bottom: none; /* 공통 스타일 덮어쓰기 */
+    padding-bottom: 0;
+}
+
+.terms-header-area p {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* --- 약관 목록 컨테이너 --- */
+.terms-list {
+    margin-bottom: 30px;
+    border: 1px solid #ddd; 
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+}
+
+/* 개별 약관 항목 스타일 */
+.term-item {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee; 
+    text-align: left; 
+}
+.term-item:last-child {
+    border-bottom: none; 
+}
+
+/* 약관 헤더 (제목 줄) */
+.term-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* 필수/선택 태그 */
+.term-required, .term-optional {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.term-required {
+    color: #03c75a; /* 네이버 녹색 계열 */
+}
+.term-optional {
+    color: #777;
+}
+
+/* 화살표 스타일 (CSS로 심볼 구현) */
+.term-arrow {
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #bbb;
+    border-right: 2px solid #bbb;
+    transform: rotate(45deg); /* 오른쪽 꺾쇠 */
+    margin-left: auto;
+}
+
+/* 약관 내용 박스 (스크롤 영역) */
+.term-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    height: 120px; 
+    overflow-y: scroll; 
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+/* 개별 동의 체크박스 영역 */
+.term-check {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-top: 10px;
+}
+
+/* --- 전체 동의 박스 스타일링 --- */
+.all-terms-check-box {
+    border: none;
+    background-color: transparent; 
+    padding: 0;
+    margin-bottom: 30px;
+    justify-content: center; /* 중앙 정렬 */
+}
+.all-agree-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* 체크박스 스타일 */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #03c75a; /* 네이버 메인 컬러 */
+}
+
+/* --- 다음 단계 버튼 (#next-step-btn) 스타일링 (하단 넓은 버튼) --- */
+#next-step-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px; 
+    
+    /* 비활성화 상태 */
+    background-color: #e0e0e0; 
+    color: #999;
+}
+
+/* 활성화 상태 */
+#next-step-btn:enabled {
+    background-color: #03c75a; /* 네이버 녹색 */
+    color: white;
+}
+
+#next-step-btn:enabled:hover {
+    background-color: #029a47;
+}
+
+/* ============================================== */
+/* 4. INFO PAGE (예약 정보 입력) 티켓 스타일 */
+/* ============================================== */
+
+/* 메인 컨테이너 (mobile-container) */
+.mobile-container.reserve-page {
+    /* 기존 .main-container 스타일을 덮어쓰거나 대체하여 사용 */
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 페이지 헤더 */
+.page-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+.page-header .back-btn {
+    text-align: left;
+    margin-bottom: 10px;
+    display: block;
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* 예약 정보 요약/제목 */
+.info-form-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a4d8c;
+    background-color: #f5f8ff; /* 연한 배경색으로 강조 */
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border: 1px solid #e0e6f0;
+}
+
+#final-selected-time {
+    color: #ff5e3a; /* 시간 강조 색상 */
+    font-weight: 700;
+}
+
+/* --- 폼 그룹 (입력 필드 섹션) --- */
+.form-group {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee; /* 깔끔한 구분선 */
+}
+
+.form-group:last-of-type {
+    border-bottom: none;
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* 입력 필드 공통 스타일 */
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* 입력 필드 포커스 */
+.form-group input:focus {
+    border-color: #1a4d8c; 
+    box-shadow: 0 0 0 1px #1a4d8c; 
+    outline: none;
+}
+
+/* 인원 수 안내 텍스트 */
+.capacity-note {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+#max-capacity-display {
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- 예약 최종 확정 버튼 --- */
+.final-reserve-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    
+    /* 비활성화 상태 */
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* 활성화 상태 (티켓 스타일 강조 색상) */
+.final-reserve-btn:enabled {
+    background-color: #ff5e3a; /* 주황색 계열 */
+    color: white;
+    cursor: pointer;
+}
+
+.final-reserve-btn:enabled:hover {
+    background-color: #e65433;
+}
+
+/* ============================================== */
+/* 4-1. INFO PAGE - 입력 가이드 메시지 스타일 */
+/* ============================================== */
+
+/* 안내 메시지 기본 스타일 */
+.input-guide-message {
+    display: none; /* 🌟 기본적으로 숨김 */
+    font-size: 12px;
+    color: #777; /* 연한 회색 */
+    margin-top: 5px;
+    padding-left: 5px;
+    transition: opacity 0.3s;
+}
+
+/* 입력 필드에 포커스가 갔을 때 안내 메시지 표시 */
+#input-email:focus + #email-format-guide {
+    display: block; /* 🌟 포커스 시 표시 */
+    color: #1a4d8c; /* 강조 색상으로 변경 */
+    font-weight: 500;
+}
+
+/* 유효성 검사 실패 시 경고 색상 */
+.form-group.error .input-guide-message {
+    display: block;
+    color: #ff4747; /* 빨간색 경고 */
+    font-weight: 600;
+}
