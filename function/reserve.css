@@ -92,13 +92,13 @@
 }
 
 .time-slot[data-status="available"]:hover {
-    background-color: #f0f0f0;
+    background-color: #ff0000;
 }
 
 /* 선택된 시간대 스타일 */
 .time-slot.selected {
     background-color: #3498db; 
-    color: white;
+    color: rgb(255, 255, 255);
     border-color: #3498db;
     font-weight: bold;
 }
