@@ -54,7 +54,7 @@ body {
 
 /* 2-1. 상단 메인 부스 이미지 배너 */
 .main-banner {
-    background: url('image/banner_image.jpg') center center / cover, #3498db; /* 실제 이미지를 대체해주세요 */
+    background: url('image/main_banner.png') center center / cover, #3498db; /* 실제 이미지를 대체해주세요 */
     height: 250px;
     display: flex;
     align-items: flex-end;

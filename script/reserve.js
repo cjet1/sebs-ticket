@@ -136,12 +136,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         let availableCount = 0;
-        Object.keys(slotsData).sort().forEach(time => {
-            // 🌟🌟 핵심 수정 🌟🌟
-            // 'info.js'에서 DB에 잔여 인원(Remaining)을 저장하므로,
-            // DB에서 가져온 값이 곧 잔여 인원입니다.
+    Object.keys(slotsData).sort((a, b) => {
+            const timeA = parseInt(a.replace(':', ''), 10);
+            const timeB = parseInt(b.replace(':', ''), 10);
+            return timeA - timeB;
+        }).forEach(time => {
             const remaining = slotsData[time] === null ? MAX_CAPACITY : slotsData[time];
-
             const isAvailable = remaining > 0;
             const statusText = isAvailable ? `(${remaining}/${MAX_CAPACITY})` : '(마감)';
 
@@ -149,6 +149,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             button.className = 'time-slot';
             button.setAttribute('data-time', time);
             button.setAttribute('data-status', isAvailable ? 'available' : 'unavailable');
+            
+            // UI 출력: 시간 값은 그대로 사용
             button.textContent = `${time} ${statusText}`;
             
             if (!isAvailable) {

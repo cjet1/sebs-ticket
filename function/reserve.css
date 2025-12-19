@@ -61,6 +61,12 @@
     margin-bottom: 5px;
 }
 
+.booth-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 찌그러지지 않게 꽉 채움 */
+}
+
 
 /* 예약 폼 및 시간 선택 스타일 */
 .reservation-form {
@@ -92,7 +98,7 @@
 }
 
 .time-slot[data-status="available"]:hover {
-    background-color: #ff0000;
+    background-color: #5FB8D9;
 }
 
 /* 선택된 시간대 스타일 */
